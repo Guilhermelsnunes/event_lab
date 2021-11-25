@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <title>
+        {{ title }}
+    </title>
+</head>
+
+<body>
+
+
+    <h1>Welcome to Guilherme & Sacha's Event Planner</h1>
+
+    <form action="/events" method="post">
+        <label for="date">Date:</label>
+        <input type="text" name="date" id="date">
+
+        <label for="name">Name of Event:</label>
+        <input type="text" name="name" id="name">
+
+        <label for="guests">Number of Guests:</label>
+        <input type="text" name="guests" id="guests">
+
+        <label for="room">Room Location:</label>
+        <input type="text" name="room" id="room">
+
+        <label for="description">Description:</label>
+        <input type="text" name="description" id="description">
+
+        <input type="submit" value="Add Event">
+
+    </form>
+
+    <h2>Up coming events</h2>
+
+    {% for event in events %}
+        <div>  
+            <p>
+                <span>{{ event.name }}: {{ event.description }} </span> 
+                <span> Date:{{ event.date }} </span>
+                <span> Room Location:{{ event.room }} </span>
+                <span> Number of Guests:{{ event.guests }}</span>
+            </p>
+            <hr>
+        </div>
+    {% endfor %}
+
+
+</body>
+
+</html>
