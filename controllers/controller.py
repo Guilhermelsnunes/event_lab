@@ -8,7 +8,7 @@ def index():
     return render_template('index.html', title='Event Planner', events=events)
 
 @app.route('/events', methods=['POST'])
-def add_event():
+def add_new_event():
     event_date = request.form['date']
     event_name = request.form['name']
     event_guests = int(request.form['guests'])
